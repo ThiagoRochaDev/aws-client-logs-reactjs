@@ -24,20 +24,13 @@ export default function ProfilePage(props) {
   return (
     <div>
       
-      <Parallax small filter image={require("assets/img/profile-bg.jpg")} />
+      <Parallax style={{ height: `120px ` }} small filter image={require("assets/img/profile-bg.jpg")}  />
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div>
-          <div className={classes.container}>
+          <div className={classes.container} >
             <GridContainer justify="center">
               <GridItem xs={12} sm={12} md={6}>
-                <div className={classes.profile}>
-                  <div>
-                    
-                  </div>
-                  <div className={classes.name}>
-
-                  </div>
-                </div>
+                
               </GridItem>
             </GridContainer>
             <div className={classes.description}>

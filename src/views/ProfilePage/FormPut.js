@@ -28,7 +28,7 @@ handleSubmit = event =>{
     //     id : this.state.id,
     // }
 
-    axios.put(`https://8y5uop0v1a.execute-api.sa-east-1.amazonaws.com/dev/log/${this.state.id}`)
+    axios.put(`https://cors-anywhere.herokuapp.com/https://8y5uop0v1a.execute-api.sa-east-1.amazonaws.com/dev/log/${this.state.id}`)
     .then(res =>{
         console.log(res.data);
     })

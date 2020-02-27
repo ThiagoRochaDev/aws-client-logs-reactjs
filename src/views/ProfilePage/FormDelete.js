@@ -29,7 +29,7 @@ handleSubmit = event =>{
     //     id : this.state.id,
     // }
 
-    axios.delete(`https://8y5uop0v1a.execute-api.sa-east-1.amazonaws.com/dev/log/${this.state.id}`)
+    axios.delete(`https://cors-anywhere.herokuapp.com/https://8y5uop0v1a.execute-api.sa-east-1.amazonaws.com/dev/log/${this.state.id}`)
     .then(res =>{
         console.log(res.data);
     })
@@ -40,14 +40,13 @@ handleSubmit = event =>{
         return(
             <form onSubmit={this.handleSubmit}>
 
-                    <CustomInput
+                    <CustomInput onChange={this.handleChange}
                       labelText="Informe o Id..."
                       id="id"
+                      name="id"
                       formControlProps={{
                         fullWidth: true
                       }}
-                      name="arquivo_name"
-                      onChange={this.handleChange}
                       inputProps={{
                         type: "text",
                         endAdornment: (
