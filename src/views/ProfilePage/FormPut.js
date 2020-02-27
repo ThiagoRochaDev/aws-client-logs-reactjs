@@ -17,6 +17,7 @@ state = {
 handleChange = event =>{
     this.setState({
         id: event.target.value,
+        
        
     });
 
@@ -24,12 +25,21 @@ handleChange = event =>{
 }
 
 
+
+
 handleSubmit = event =>{
     event.preventDefault();
 
-    axios.put(`https://cors-anywhere.herokuapp.com/https://8y5uop0v1a.execute-api.sa-east-1.amazonaws.com/dev/log/${this.state.id}`)
+    let params ={
+      
+      arquivo_name: event.target.elements.arquivo_name.value,
+      bucket_name: event.target.elements.bucket_name.value
+      
+    }
+
+    axios.put(`https://cors-anywhere.herokuapp.com/https://8y5uop0v1a.execute-api.sa-east-1.amazonaws.com/dev/log/${this.state.id}`,params)
     .then(res =>{
-        this.setState({log: res.data});
+        
         console.log(res.data);
         alert('Log alterado com Sucesso !');
         window.location.href ='/'
@@ -67,7 +77,7 @@ handleSubmit = event =>{
                           }}
                           inputProps={{
                             type: "text",
-                            onChange: this.handleChange,
+                           
                             endAdornment: (
                               <InputAdornment position="end">
                                 <DescriptionIcon className />
@@ -84,7 +94,7 @@ handleSubmit = event =>{
                           }}
                           inputProps={{
                             type: "text",
-                            onChange: this.handleChange,
+                           
                             endAdornment: (
                               <InputAdornment position="end">
                                 <DescriptionIcon className>
