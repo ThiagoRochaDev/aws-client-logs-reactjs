@@ -30,7 +30,6 @@ export default function ProfilePage(props) {
           <div className={classes.container} >
             <GridContainer justify="center">
               <GridItem xs={12} sm={12} md={6}>
-                
               </GridItem>
             </GridContainer>
             <div className={classes.description}>
@@ -72,7 +71,6 @@ export default function ProfilePage(props) {
                       tabContent: (
                         <GridContainer justify="center">
                           <GridItem xs={12} sm={12} md={4}>
-                            
                           <FormDelete></FormDelete>
                           </GridItem>
                         </GridContainer>

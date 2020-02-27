@@ -27,25 +27,25 @@ state = {
                     <td><b>Arquivo_name</b></td>
                     <td><b>Bucket_name</b></td>
                 </tr>
-                <tr >
+                    <tr >
+                    <td>
+                    { this.state.logs.map(logs =>
+                    <tr>{logs.id}</tr>
+                    ) }   
+                    </td>
+                    
                 <td>
                 { this.state.logs.map(logs =>
-                <tr>{logs.id}</tr>
-                ) }   
-                </td>
-                
-               <td>
-               { this.state.logs.map(logs =>
-                    <tr>{logs.arquivo_name}</tr>
-                ) }
-                </td>
+                        <tr>{logs.arquivo_name}</tr>
+                    ) }
+                    </td>
 
-                <td>
-                { this.state.logs.map(logs =>
-                    <tr>{logs.bucket_name}</tr>
-                ) }
+                    <td>
+                    { this.state.logs.map(logs =>
+                        <tr>{logs.bucket_name}</tr>
+                    ) }
 
-                </td> 
+                    </td> 
 
                 </tr>
                

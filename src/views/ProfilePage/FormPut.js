@@ -16,21 +16,23 @@ state = {
 
 handleChange = event =>{
     this.setState({
-        id: event.target.value
+        id: event.target.value,
+       
     });
-};
+
+  
+}
 
 
 handleSubmit = event =>{
     event.preventDefault();
 
-    // const id = {
-    //     id : this.state.id,
-    // }
-
     axios.put(`https://cors-anywhere.herokuapp.com/https://8y5uop0v1a.execute-api.sa-east-1.amazonaws.com/dev/log/${this.state.id}`)
     .then(res =>{
+        this.setState({log: res.data});
         console.log(res.data);
+        alert('Log alterado com Sucesso !');
+        window.location.href ='/'
     })
 };
 
@@ -39,7 +41,7 @@ handleSubmit = event =>{
         return(
             <form onSubmit={this.handleSubmit}>
                
-               <CustomInput onChange={this.handleChange}
+               <CustomInput 
                           labelText="Informe o id..."
                           id="id"
                           name="id"
@@ -48,6 +50,7 @@ handleSubmit = event =>{
                           }}
                           inputProps={{
                             type: "text",
+                            onChange: this.handleChange,
                             endAdornment: (
                               <InputAdornment position="end">
                                 <AssignmentLateIcon className />
@@ -55,7 +58,7 @@ handleSubmit = event =>{
                             )
                           }}
                         />
-                              <CustomInput onChange={this.handleChange}
+                              <CustomInput 
                           labelText="Informe o Arquivo_name..."
                           id="arquivo_name"
                           name="arquivo_name"
@@ -64,6 +67,7 @@ handleSubmit = event =>{
                           }}
                           inputProps={{
                             type: "text",
+                            onChange: this.handleChange,
                             endAdornment: (
                               <InputAdornment position="end">
                                 <DescriptionIcon className />
@@ -71,8 +75,8 @@ handleSubmit = event =>{
                             )
                           }}
                         />
-                        <CustomInput onChange={this.handleChange}
-                          labelText="Bucket_name"
+                        <CustomInput 
+                          labelText="Bucket_name.."
                           id="bucket_name"
                           name="bucket_name"
                           formControlProps={{
@@ -80,6 +84,7 @@ handleSubmit = event =>{
                           }}
                           inputProps={{
                             type: "text",
+                            onChange: this.handleChange,
                             endAdornment: (
                               <InputAdornment position="end">
                                 <DescriptionIcon className>

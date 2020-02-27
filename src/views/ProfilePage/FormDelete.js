@@ -7,12 +7,13 @@ import AssignmentLateIcon from '@material-ui/icons/AssignmentLate';
 
 export default class FormDelete extends React.Component{
 
+  
     
 state = {
     id : undefined,
 }
 
-
+// PEGA O VALOR DO INPUT
 handleChange = event =>{
     this.setState({
         id: event.target.value
@@ -25,13 +26,12 @@ handleSubmit = event =>{
 
 
 
-    // const id = {
-    //     id : this.state.id,
-    // }
-
+// ESTOU USANDO UM RECURSO PARA DESABILITAR CORS MAIS RAPIDO PARA EXECUÇÃO 
     axios.delete(`https://cors-anywhere.herokuapp.com/https://8y5uop0v1a.execute-api.sa-east-1.amazonaws.com/dev/log/${this.state.id}`)
     .then(res =>{
-        console.log(res.data);
+       console.log(res.data);
+       alert('Log deletado com Sucesso !');
+       window.location.href ='/'
     })
 };
 
