@@ -19,9 +19,38 @@ state = {
 
     render(){
         return(
-            <ul>
-                { this.state.logs.map(logs => <li key={logs.id}>{logs.arquivo_name}<br></br>{logs.id} </li>) }
-            </ul>
+            
+            <table >
+                <tr>
+                    <td>Id</td>
+                    <td>Arquivo_name</td>
+                    <td>Bucket_name</td>
+                </tr>
+                <tr>
+                <td>
+                { this.state.logs.map(logs =>
+                <tr>{logs.id}</tr>
+                ) }   
+                </td>
+                
+               <td>
+               { this.state.logs.map(logs =>
+                    <tr>{logs.arquivo_name}</tr>
+                ) }
+                </td>
+
+                <td>
+                { this.state.logs.map(logs =>
+                    <tr>{logs.bucket_name}</tr>
+                ) }
+
+                </td> 
+
+                </tr>
+               
+            
+            </table>
+            
         );
     }
 
