@@ -40,15 +40,17 @@ handleSubmit = event =>{
         return(
             <form onSubmit={this.handleSubmit}>
 
-                    <CustomInput onChange={this.handleChange}
+                    <CustomInput 
                       labelText="Informe o Id..."
                       id="id"
                       name="id"
                       formControlProps={{
-                        fullWidth: true
+                        fullWidth: true,
                       }}
                       inputProps={{
                         type: "text",
+                        onChange: this.handleChange,
+                        
                         endAdornment: (
                           <InputAdornment position="end">
                             <AssignmentLateIcon className  />
