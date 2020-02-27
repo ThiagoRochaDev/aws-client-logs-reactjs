@@ -9,7 +9,7 @@ import NavPills from "components/NavPills/NavPills.js";
 import Parallax from "components/Parallax/Parallax.js";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import CustomInput from "components/CustomInput/CustomInput.js";
-import Header from "components/Header/Header.js";
+//import Header from "components/Header/Header.js";
 import Footer from "components/Footer/Footer.js";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
@@ -24,21 +24,12 @@ const useStyles = makeStyles(styles);
 
 export default function ProfilePage(props) {
   const classes = useStyles();
-  const { ...rest } = props;
+  
   
   
   return (
     <div>
-      <Header
-        color="transparent"
-        brand="Desafio Globo"
-        fixed
-        changeColorOnScroll={{
-          height: 200,
-          color: "white"
-        }}
-        {...rest}
-      />
+      
       <Parallax small filter image={require("assets/img/profile-bg.jpg")} />
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div>

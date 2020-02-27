@@ -20,7 +20,7 @@ state = {
     render(){
         return(
             
-            <table >
+            <table  >
                 <tr>
                     <td>Id</td>
                     <td>Arquivo_name</td>
